@@ -1,0 +1,9 @@
+event planner app **
+--
+random nota cu cuvinte din alte limbi		->>>>>>
+--
+aplicatie pentru bani si pe ce i cheltui **
+--
+aplicatie in care iti desenezi cum esti in ziua respectiva (desenezi ceva) (ar veni online)	->>>>>
+--
+dream recorder (folosete voice recognizer sa memoreze visele)

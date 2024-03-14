@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Langos</string>
+    <string name="TITLE"><u>LANGOS\nLOGIN</u></string>
+    <string name="TITLE_SIGN"><u>LANGOS\nSIGN-UP</u></string>
+    <string name="login"><u>Login</u></string>
+    <string name="sign"><u>Sign up</u></string>
+    <string name="openString">openString</string>
+    <string name="closeString">closeString</string>
+    <string name="profile_name"><u></u></string>
+    <string name="about_you"><b><u>About you</u></b></string>
+    <string name="language_title"><b><u>Notifications</u></b></string>
+    <string name="lang_s1"><u>Your current selected language is</u></string>
+    <string name="lang_s2"><u>Received words language</u></string>
+    <string name="lang_s3"><u>Receive notification once at every</u></string>
+    <string name="lang_s4"><u>Received words type</u></string>
+    <string name="lang_s5"><u>Enable notifications</u></string>
+    <string name="langos"><u><b>Langos</b></u></string>
+    <string name="lang_alt"><u>Or get related words (English)</u></string>
+    <string name="latest"><u>Last word: </u></string>
+    <string name="def_text1"><u><b>Search for a definition</b></u></string>
+    <string name="def_name"><u>Word </u></string>
+    <string name="def_def"><u>Definition </u></string>
+    <string name="def_syn"><u>Synonyms </u></string>
+    <string name="def_ant"><u>Antonyms </u></string>
+    <string name="def_mer"><u>Related words </u></string>
+    <string name="def_ex"><u>Examples </u></string>
+    <string name="def_guess"><u><b>Guess the word </b></u></string>
+    <string name="user_since"><u>User since: </u></string>
+</resources>

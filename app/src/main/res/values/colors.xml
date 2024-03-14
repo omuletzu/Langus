@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="back">#33B5FF</color>
+    <color name="btn">#3380FF</color>
+    <color name="quote">#C8BFE7</color>
+    <color name="status_bar">#A900FD</color>
+    <color name="warning">#283747</color>
+    <color name="menu_background">#ECF0F1</color>
+    <color name="option_unselect">#797D7F</color>
+    <color name="option_select">#424949</color>
+    <color name="back_border">#0091e6</color>
+    <color name="btn_border">#0058e6</color>
+    <color name="btn_off">#e60000</color>
+    <color name="menu_head">#FF5733</color>
+    <color name="culoare_misto">#00CCCC</color>
+    <color name="culoare_misto1">#009999</color>
+</resources>

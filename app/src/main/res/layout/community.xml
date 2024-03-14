@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/first_time"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/community_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_explore"
+        android:layout_width="match_parent"
+        android:layout_height="85sp"
+        app:contentInsetStart="0sp"
+        android:elevation="12sp"
+        android:background="@drawable/back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="People"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="@drawable/back"
+                    android:fontFamily="@font/inter_font"
+                    android:drawableTop="@drawable/people">
+                </Button>
+
+                <Button
+                    android:id="@+id/buton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Search"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:background="@drawable/back"
+                    android:fontFamily="@font/inter_font"
+                    android:drawableTop="@drawable/search">
+                </Button>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3sp"
+        android:background="@color/quote">
+    </View>
+
+</LinearLayout>

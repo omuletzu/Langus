@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view"
+    android:id="@+id/meniu">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/lang_sel"
+            android:title="Notification's options"
+            android:icon="@drawable/home">
+        </item>
+
+        <item
+            android:id="@+id/info"
+            android:title="Informations about words"
+            android:icon="@drawable/info">
+        </item>
+
+        <item
+            android:id="@+id/saved_words"
+            android:title="Saved words"
+            android:icon="@drawable/save">
+        </item>
+
+        <item
+            android:id="@+id/community"
+            android:title="Community"
+            android:icon="@drawable/community">
+        </item>
+
+        <item
+            android:id="@+id/profile"
+            android:title="Profile"
+            android:icon="@drawable/profile">
+        </item>
+    </group>
+
+    <item
+        android:title="">
+
+        <menu>
+            <item
+                android:title="Logout and close"
+                android:id="@+id/close_app"
+                android:icon="@drawable/close">
+            </item>
+        </menu>
+    </item>
+</menu>

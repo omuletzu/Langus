@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/first_time">
+
+        <View
+            android:id="@+id/view8"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_name"
+            android:layout_marginTop="30sp"
+            android:background="@color/quote">
+        </View>
+
+        <View
+            android:id="@+id/view9"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            app:layout_constraintTop_toBottomOf="@+id/user_since"
+            android:layout_marginTop="30sp"
+            android:background="@color/quote">
+        </View>
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_score_aux"
+            android:layout_marginTop="30sp"
+            android:background="@color/quote">
+        </View>
+
+        <TextView
+            android:id="@+id/user_since"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User since: "
+            android:textStyle="bold"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view8"
+            android:layout_marginTop="30sp"
+            android:textSize="20sp"
+            android:layout_marginLeft="30sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_about_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_you"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30sp"
+
+            android:textSize="30sp"
+            android:fontFamily="@font/inter_font">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginTop="40sp"
+            android:textSize="35sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginRight="35sp"
+            android:layout_marginLeft="35sp"
+            android:background="@drawable/text_back"
+            android:text="Username"
+            android:elevation="4sp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_about_you"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toEndOf="@+id/user_since"
+            app:layout_constraintTop_toBottomOf="@+id/view8"
+            android:layout_marginTop="30sp"
+            android:textSize="20sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_place_aux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view9"
+            android:layout_marginTop="30sp"
+            android:textSize="20sp"
+            android:text="Place: "
+            android:textStyle="bold"
+            android:layout_marginLeft="30sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_score_aux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_place_aux"
+            android:layout_marginTop="20sp"
+            android:textSize="20sp"
+            android:text="Words guessed: "
+            android:textStyle="bold"
+            android:layout_marginLeft="30sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toEndOf="@+id/profile_score_aux"
+            app:layout_constraintTop_toBottomOf="@+id/profile_place_aux"
+            android:layout_marginTop="20sp"
+            android:textSize="20sp"
+            android:text="---">
+        </TextView>
+
+        <TextView
+            android:id="@+id/profile_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_font"
+            app:layout_constraintStart_toEndOf="@+id/profile_place_aux"
+            app:layout_constraintTop_toBottomOf="@+id/view9"
+            android:layout_marginTop="30sp"
+            android:textSize="20sp"
+            android:text="---">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/word_input"
+            android:layout_width="210sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_info_set"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30sp"
+            android:hint="Favourite word">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/favourite_word"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:maxLength="18"
+                android:elevation="1sp"
+                android:background="@drawable/text_back"
+                android:fontFamily="@font/inter_font">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/word_description_layout"
+            android:layout_width="210sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/word_input"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30sp"
+            android:hint="Why so? :D">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/word_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:maxLength="18"
+                android:elevation="1sp"
+                android:background="@drawable/text_back"
+                android:fontFamily="@font/inter_font">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/profile_info_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view7"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/culoare_misto1"
+            android:text="*Set a favourite word">
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:elevation="4sp"
+            app:layout_constraintTop_toBottomOf="@+id/word_description_layout"
+            app:layout_constraintBottom_toTopOf="@+id/view10"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="45sp"
+            android:layout_marginBottom="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/profile_back_set"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <View
+            android:id="@+id/view10"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/quote">
+        </View>
+
+        <ImageView
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:src="@drawable/words_icon"
+            app:layout_constraintTop_toBottomOf="@+id/view7"
+            app:layout_constraintStart_toEndOf="@+id/word_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

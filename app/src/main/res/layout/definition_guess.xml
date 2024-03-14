@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/def_guess_view1"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="@color/quote"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_change"
+            android:layout_marginTop="30sp">
+        </View>
+
+        <View
+            android:id="@+id/def_guess_view2"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="@color/quote"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_input_lay"
+            android:layout_marginTop="30sp">
+        </View>
+
+        <View
+            android:id="@+id/def_guess_view3"
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="@color/quote"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_final"
+            android:layout_marginTop="30sp">
+        </View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="@color/quote"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </View>
+
+        <TextView
+            android:id="@+id/def_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/def_guess"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20sp"
+            android:fontFamily="@font/inter_font">
+        </TextView>
+
+        <TextView
+            android:id="@+id/def_def_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_font"
+            android:padding="20sp"
+            android:lineSpacingExtra="10sp"
+            android:layout_marginTop="20sp"
+            android:text="---"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/def_text1">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/def_guess_input_lay"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="30sp"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_view1"
+            android:hint="Your input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/def_guess_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="1sp"
+                android:maxLength="18"
+                android:textSize="20sp"
+                android:padding="18sp"
+                android:background="@drawable/profile_back_set"
+                android:fontFamily="@font/inter_font">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/def_verify_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="#00FFFFFF"
+            android:drawableTop="@drawable/example_def"
+            android:text="(verify)"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/def_guess_input_lay"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_view1">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <TextView
+            android:id="@+id/def_guess_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_view2"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="30sp"
+            android:fontFamily="@font/inter_font">
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/def_guess_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/change"
+            android:text=" Change descryption"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/def_def_out">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/def_guess_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="20sp"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/save"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:text=" Save word"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_view3">
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/def_guess_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/info"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:text=" Get more info"
+            android:paddingBottom="20sp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/def_guess_save">
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

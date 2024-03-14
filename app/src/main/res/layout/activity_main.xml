@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/mod"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40sp"
+        android:fontFamily="@font/inter_font"
+        android:textColor="@color/warning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintBottom_toTopOf="@id/buton">
+    </TextView>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="80dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/inter_font"
+        android:text="@string/sign"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/buton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="200sp"
+        app:layout_constraintBottom_toTopOf="@+id/parola_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlu"
+        android:layout_marginTop="40sp"
+        android:layout_marginLeft="40sp"
+        android:hint="Name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:elevation="1sp"
+            android:maxLength="18"
+            android:background="@drawable/text_input"
+            android:fontFamily="@font/inter_font">
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/parola_layout"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40sp"
+        android:layout_marginTop="30sp"
+        android:hint="Password"
+        app:endIconMode="password_toggle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/parola"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/text_input"
+            android:fontFamily="@font/inter_font"
+            android:maxLength="18"
+            android:elevation="1sp"
+            android:textSize="20sp"
+            android:inputType="textPassword">
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buton"
+        android:layout_width="130sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/inter_font"
+        android:padding="20sp"
+        android:elevation="1sp"
+        android:text="LOGIN"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </Button>
+
+    <TextView
+        android:id="@+id/titlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TITLE"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter_font"
+        android:layout_marginTop="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="40sp"
+        android:textSize="50sp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/icon_app"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:src="@drawable/app_icon"
+        app:layout_constraintStart_toEndOf="@+id/buton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parola_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ImageView>
+
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:src="@drawable/iconapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30sp"
+        android:layout_marginRight="30sp"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_font"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="15sp"
+        android:paddingBottom="15sp"
+        android:text="©Copyright omuletzu"
+        android:textColor="@color/warning">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,311 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.sf.extjwnl</groupId>
+        <artifactId>extjwnl-parent</artifactId>
+        <version>2.0.5</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>extjwnl-utilities</artifactId>
+    <packaging>jar</packaging>
+    <version>2.0.5</version>
+    <name>extJWNL Utilities</name>
+    <description>Utilities for extJWNL library</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.extjwnl</groupId>
+            <artifactId>extjwnl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <scope>test</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <dependency>
+            <scope>test</scope>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.210</version>
+        </dependency>
+
+        <dependency>
+            <scope>runtime</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
+
+        <dependency>
+            <scope>runtime</scope>
+            <groupId>net.sf.extjwnl</groupId>
+            <artifactId>extjwnl-data-wn31</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <scope>runtime</scope>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1212</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <outputDirectory>target/classes</outputDirectory>
+        <directory>target</directory>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <directory>src/resources/log4j</directory>
+                <includes />
+                <targetPath>${project.build.directory}/dist/etc</targetPath>
+            </resource>
+        </resources>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>integration-tests</id>
+            <properties>
+                <maven.test.skip>false</maven.test.skip>
+            </properties>
+            <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>false</filtering>
+                    </testResource>
+                    <testResource>
+                        <directory>src/test/resources-filtered</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>unpack-wordnet</id>
+                                <phase>process-test-resources</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>net.sf.extjwnl</groupId>
+                                            <artifactId>extjwnl-data-wn31</artifactId>
+                                            <type>jar</type>
+                                            <overWrite>true</overWrite>
+                                            <includes>net/sf/extjwnl/data/wordnet/wn31/*.*</includes>
+                                            <outputDirectory>${project.build.directory}/data</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>create-data-folders</id>
+                                <phase>generate-test-resources</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <echo message="Creating data folders..." />
+                                        <mkdir dir="${project.build.directory}/data" />
+                                        <mkdir dir="${project.build.directory}/data/db" />
+                                        <mkdir dir="${project.build.directory}/data/map" />
+                                    </target>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>convert-data</id>
+                                <phase>pre-integration-test</phase>
+                                <configuration>
+                                    <target>
+                                        <property name="test_classpath" refid="maven.test.classpath" />
+
+                                        <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+                                        <if>
+                                            <available file="${project.build.directory}/data/db/wordnet.h2.db" />
+                                            <then>
+                                                <echo>Using existing database</echo>
+                                            </then>
+
+                                            <else>
+                                                <echo>The database does not exist, converting</echo>
+
+                                                <java classname="net.sf.extjwnl.utilities.DictionaryToDatabase" fork="false" failonerror="true">
+
+                                                    <arg value="${project.build.testOutputDirectory}/test_file_properties.xml" />
+                                                    <arg value="${project.basedir}/src/main/sql/create.sql" />
+                                                    <arg value="org.h2.Driver" />
+                                                    <arg value="jdbc:h2:${project.build.directory}/data/db/wordnet" />
+                                                    <arg value="" />
+                                                    <arg value="" />
+
+                                                    <classpath>
+                                                        <pathelement path="${test_classpath}" />
+                                                    </classpath>
+                                                </java>
+                                                <echo>The database converted</echo>
+                                            </else>
+                                        </if>
+
+                                        <if>
+                                            <available file="${project.build.directory}/data/map/data.noun" />
+                                            <then>
+                                                <echo>Using existing map</echo>
+                                            </then>
+
+                                            <else>
+                                                <echo>The map does not exist, converting</echo>
+
+                                                <java classname="net.sf.extjwnl.utilities.DictionaryToMap" fork="false" failonerror="true">
+
+                                                    <arg value="${project.build.testOutputDirectory}/test_file_properties.xml" />
+                                                    <arg value="${project.build.directory}/data/map" />
+
+                                                    <classpath>
+                                                        <pathelement path="${test_classpath}" />
+                                                    </classpath>
+                                                </java>
+                                                <echo>The map converted</echo>
+                                            </else>
+                                        </if>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>ant-contrib</groupId>
+                                <artifactId>ant-contrib</artifactId>
+                                <version>20020829</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>release</id>
+
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>appassembler-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>appassembler</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>assemble</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- set alternative assemble directory -->
+                                    <assembleDirectory>${project.build.directory}/dist</assembleDirectory>
+                                    <!-- Extra JVM arguments that will be included in the bin scripts -->
+                                    <extraJvmArguments>-Xmx512M</extraJvmArguments>
+                                    <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+                                    <repositoryLayout>flat</repositoryLayout>
+                                    <repositoryName>lib</repositoryName>
+                                    <programs>
+                                        <program>
+                                            <mainClass>net.sf.extjwnl.utilities.DictionaryToDatabase</mainClass>
+                                            <id>dict2db</id>
+                                        </program>
+                                        <program>
+                                            <mainClass>net.sf.extjwnl.utilities.DictionaryToMap</mainClass>
+                                            <id>dict2map</id>
+                                        </program>
+                                        <program>
+                                            <mainClass>net.sf.extjwnl.utilities.Examples</mainClass>
+                                            <id>examples</id>
+                                        </program>
+                                        <program>
+                                            <mainClass>net.sf.extjwnl.cli.ewn</mainClass>
+                                            <id>ewn</id>
+                                        </program>
+                                    </programs>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>all</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+
+                                <configuration>
+                                    <finalName>extjwnl-${project.version}</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>false</attach>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/extjwnl-utilities.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
