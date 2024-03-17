@@ -38,15 +38,15 @@
 
 - **Dictionary**: Just type the word you want to know or press **Get a random word**. Also for **Guess the word**, type the word then press **Verify**. If it is correct your word counter for that leaderboard will be incremented and if you can't get the word press **Get more info** to see what you had to guess.
 
-
-  <img src="https://github.com/omuletzu/Langus/assets/75565975/1bb97565-e73b-42b4-8fd6-9eea29868f38" alt="Screenshot 4" width="150">
-  <img src="https://github.com/omuletzu/Langus/assets/75565975/8852bb05-ec4b-42c2-a408-73abfcd3e29e" alt="Screenshot 5" width="150">
+  
   <img src="https://github.com/omuletzu/Langus/assets/75565975/908cbad9-0531-4889-ba44-cacfab679337" alt="Screenshot 6" width="150">
-
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/8852bb05-ec4b-42c2-a408-73abfcd3e29e" alt="Screenshot 5" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/1bb97565-e73b-42b4-8fd6-9eea29868f38" alt="Screenshot 4" width="150">
+  
 
 - **Logout and close**: By pressing this button from the menu, you will be **logged out** and **Langus** will close itself.
 
 
   <img src="https://github.com/omuletzu/Langus/assets/75565975/c5087883-b1f6-45d1-a16a-f02f976689cf" alt="Screenshot 6" width="150">
-  <img src="https://github.com/omuletzu/Langus/assets/75565975/194e70b9-8ae4-42a3-a695-e87c57e10810" alt="Screenshot 7" width="150">
-  <img src="https://github.com/omuletzu/Langus/assets/75565975/ef82c490-225d-442a-89bf-6873dbc71f65" alt="Screenshot 8" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/ef82c490-225d-442a-89bf-6873dbc71f65" alt="Screenshot 7" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/194e70b9-8ae4-42a3-a695-e87c57e10810" alt="Screenshot 8" width="150">
