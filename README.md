@@ -23,6 +23,30 @@
 
 ## Usage
 - **Sign in or create an account**: First of all you have to either login or create an account.
+
+  
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/6c0dd8b4-b78e-492e-94ac-1813b2e4d7b5" alt="Screenshot 1" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/0a2813ca-706f-42c2-839b-7e717461e781" alt="Screenshot 2" width="150">
+
+
 - **Notifications**: For this feature, you have to select **2 languages**, the **interval** you want to receive this notifications (modify by pressing **+ or -**), **common** or **advanced** words or **related words** (English), the turn it **ON**.
+
+
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/1a039d82-ff5e-408f-bb19-b1b52e0a89b3" alt="Screenshot 3" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/9ae8a841-dd46-46c0-9ea0-cff1a2fc6e72" alt="Screenshot 4" width="150">
+
+
 - **Dictionary**: Just type the word you want to know or press **Get a random word**. Also for **Guess the word**, type the word then press **Verify**. If it is correct your word counter for that leaderboard will be incremented and if you can't get the word press **Get more info** to see what you had to guess.
-- **Logout and close**: by pressing this button from the menu, you will be **logged out** and **Langus** will close itself.
+
+
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/1bb97565-e73b-42b4-8fd6-9eea29868f38" alt="Screenshot 4" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/8852bb05-ec4b-42c2-a408-73abfcd3e29e" alt="Screenshot 5" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/908cbad9-0531-4889-ba44-cacfab679337" alt="Screenshot 6" width="150">
+
+
+- **Logout and close**: By pressing this button from the menu, you will be **logged out** and **Langus** will close itself.
+
+
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/c5087883-b1f6-45d1-a16a-f02f976689cf" alt="Screenshot 6" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/194e70b9-8ae4-42a3-a695-e87c57e10810" alt="Screenshot 7" width="150">
+  <img src="https://github.com/omuletzu/Langus/assets/75565975/ef82c490-225d-442a-89bf-6873dbc71f65" alt="Screenshot 8" width="150">
