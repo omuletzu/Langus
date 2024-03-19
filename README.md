@@ -50,3 +50,7 @@
   <img src="https://github.com/omuletzu/Langus/assets/75565975/c5087883-b1f6-45d1-a16a-f02f976689cf" alt="Screenshot 6" width="150">
   <img src="https://github.com/omuletzu/Langus/assets/75565975/ef82c490-225d-442a-89bf-6873dbc71f65" alt="Screenshot 7" width="150">
   <img src="https://github.com/omuletzu/Langus/assets/75565975/194e70b9-8ae4-42a3-a695-e87c57e10810" alt="Screenshot 8" width="150">
+
+## Credits
+
+- WordNet, JWI, Android Studio
