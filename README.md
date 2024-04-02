@@ -1,4 +1,4 @@
-## Langu
+## Langus
   Langus is a language learning app designed to make learning a foreign language both engaging and effective. With a range of features tailored to suit every learner's needs, Langus empowers users to master new languages at their own pace.
 
   <img src="https://github.com/omuletzu/Langus/assets/75565975/cdecff7f-8b2d-43a3-8b3c-058e56fb2689" alt="Screenshot 1" width="300">
